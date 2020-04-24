@@ -1,5 +1,5 @@
 .cart-dropdown {
-    padding: 20px;
+    padding: 15px;
     position: absolute;
     width: 240px;
     max-height: 80vh;
@@ -13,9 +13,14 @@
     z-index: 2;
 
     .cart-items {
-        min-height: 100px;
+        min-height: 70px;
         display: flex;
         flex-direction: column;
+        overflow: auto;
+
+        .empty {
+            text-align: center;
+        }
     }
 
     button {
