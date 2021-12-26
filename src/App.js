@@ -13,7 +13,7 @@ import ShopPage from "./pages/shop/shop";
 import CheckoutPage from "./pages/checkout/checkout";
 import SignInRegisterPage from "./pages/sign-in-register/sign-in-register";
 
-import Header from "./components/header/header";
+import Header from "./components/header/header.component";
 import "./App.css";
 
 class App extends React.Component {
