@@ -10,7 +10,7 @@ import CheckoutPage from "./pages/checkout/checkout.component";
 import SignInRegisterPage from "./pages/sign-in-register/sign-in-register";
 
 import Header from "./components/header/header.component";
-import "./App.css";
+import "./App.scss";
 
 const App = () => {
     const currentUser = useSelector(selectCurrentUser);

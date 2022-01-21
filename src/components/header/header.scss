@@ -6,13 +6,28 @@
     top: 0;
     display: flex;
     justify-content: space-between;
-    background: #fff;
+    background: #FFF;
     box-shadow: 0 -6px 10px 5px rgba(0, 0, 0, 0.25);
     z-index: 1;
 
+    @media screen and (max-width: 800px) {
+        padding: 0 15px;
+        height: 50px;
+    }
+
     .logo-container {
-        padding: 10px 0;
-        width: 50px;
+        margin: 5px 0;
+        padding: 5px;
+        width: 60px;
+
+        @media screen and (max-width: 800px) {
+            padding: 0 5px;
+            width: 50px;
+
+            svg {
+                width: 40px;
+            }
+        }
     }
 
     .nav {
@@ -22,9 +37,17 @@
         align-items: center;
         justify-content: flex-end;
 
+        @media screen and (max-width: 800px) {
+            width: 80%;
+        }
+
         .nav-link {
             padding: 10px 15px;
             cursor: pointer;
+
+            @media screen and (max-width: 800px) {
+                padding: 10px;
+            }
         }
     }
 }
