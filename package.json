@@ -47,10 +47,12 @@
   "resolutions": {
     "tar": "^4.4.19",
     "trim-newlines": "^3.0.1",
-    "nth-check": "^2.0.1"
+    "nth-check": "^2.0.1",
+    "mini-css-extract-plugin": "2.4.5"
   },
   "devDependencies": {
     "@svgr/webpack": "^6.2.0",
+    "mini-css-extract-plugin": "2.4.5",
     "sass": "^1.49.0"
   }
 }
