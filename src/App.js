@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, lazy, Suspense } from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { selectCurrentUser } from "./redux/user/user-selectors";
 import { checkUserSession } from "./redux/user/user-actions";
@@ -26,30 +26,24 @@ const App = () => {
         <Fragment>
             <Header />
             <main className="page-container">
-                <Switch>
-                    <ErrorBoundary>
-                        <Suspense fallback={<Spinner />}>
-                            <Route exact path="/" component={HomePage} />
-                            <Route path="/shop" component={ShopPage} />
+                <ErrorBoundary>
+                    <Suspense fallback={<Spinner />}>
+                        <Routes>
+                            <Route exact path="/" element={<HomePage />} />
+                            <Route path="/shop/*" element={<ShopPage />} />
                             <Route
                                 exact
                                 path="/checkout"
-                                component={CheckoutPage}
+                                element={<CheckoutPage />}
                             />
                             <Route
                                 exact
                                 path="/sign-in"
-                                render={() =>
-                                    currentUser ? (
-                                        <Redirect to="/" />
-                                    ) : (
-                                        <SignInRegisterPage />
-                                    )
-                                }
+                                element={currentUser ? <Navigate to="/" /> : <SignInRegisterPage />}
                             />
-                        </Suspense>
-                    </ErrorBoundary>
-                </Switch>
+                        </Routes>
+                    </Suspense>
+                </ErrorBoundary>
             </main>
         </Fragment>
     );

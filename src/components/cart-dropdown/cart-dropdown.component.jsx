@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { selectCartItems } from "../../redux/cart/cart-selectors";
 import { toggleCartHidden } from "../../redux/cart/cart-actions";
 
@@ -11,7 +11,7 @@ import "./cart-dropdown.scss";
 const CartDropdown = () => {
     const cartItems = useSelector(selectCartItems);
     const dispatch = useDispatch();
-    const history = useHistory();
+    const navigate = useNavigate();
 
     return (
         <div className="cart-dropdown">
@@ -26,7 +26,7 @@ const CartDropdown = () => {
             </div>
             <Button
                 onClick={() => {
-                    history.push("/checkout");
+                    navigate("/checkout");
                     dispatch(toggleCartHidden());
                 }}
             >
